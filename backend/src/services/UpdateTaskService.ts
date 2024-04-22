@@ -6,15 +6,16 @@ interface UpdateTaskProps{
     taskName: string;
     dueDate: Date;
     priority: string;
+    description: string;
     status: boolean
 }
 
 class UpdateTaskService{
 
-    async execute({id,taskName, dueDate, priority, status}: UpdateTaskProps){
+    async execute({id,taskName, dueDate, priority, description, status}: UpdateTaskProps){
         console.log(taskName)
 
-        if(!taskName || !dueDate || !priority){
+        if(!taskName || !dueDate || !priority || description){
             throw new Error("Preencha todos os campos")
         }
         
@@ -33,6 +34,7 @@ class UpdateTaskService{
                 taskName,
                 dueDate,
                 priority,
+                description,
                 status
             }
         })

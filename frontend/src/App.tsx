@@ -143,8 +143,8 @@ export default function App(){
                 <textarea
                   placeholder="Digite aqui a descrição..."
                   class="w-full mb-7 p-2 rounded border-2 border-black-500"
-                  value={description}
-                  onChange={(e) => "${description}"
+                  id="description"
+                  >${description}
                 </textarea>
 
               <div class="grid grid-cols-2 gap-x-2 mb-5">
@@ -185,7 +185,10 @@ export default function App(){
       const dueDateInput = document.getElementById('dueDate') as HTMLInputElement;
       const dueDate = dueDateInput ? moment(dueDateInput.value).format('YYYY-MM-DDTHH:mm:ss.SSSZ') : null;
       const priority = document.getElementById('priority') as HTMLSelectElement;
-      const description = document.getElementById('description') as HTMLInputElement;
+      const description = document.getElementById('description') as HTMLTextAreaElement;
+      const descriptionValue = description.value
+
+      console.log(descriptionValue);
 
       
       
@@ -194,8 +197,8 @@ export default function App(){
         taskName: nameTask.value,
         dueDate: dueDate,
         priority: priority.value,
-        description: description.value
-      })
+        description: descriptionValue
+      }) 
 
       setTasks(allTasks => {
         const updatedTasks = allTasks.map(task => {
