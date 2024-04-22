@@ -144,7 +144,7 @@ export default function App(){
                   placeholder="Digite aqui a descrição..."
                   class="w-full mb-7 p-2 rounded border-2 border-black-500"
                   value={description}
-                  onChange={(e) => ${description}
+                  onChange={(e) => "${description}"
                 </textarea>
 
               <div class="grid grid-cols-2 gap-x-2 mb-5">
