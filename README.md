@@ -60,7 +60,47 @@ Verificar conexão com o banco via Prisma Studio
 npx prisma studio
 ```
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+## Para obter dados do sistema
+
+Cadastro de tarefas:
+```
+curl --request POST \
+  --url http://localhost:3333/task \
+  --header 'Content-Type: application/json' \
+  --data '{
+"taskName": "teste delete",
+"dueDate": "2024-04-25T01:47:38.950Z",
+"priority": "Urgente",
+"description": ""
+}'
+```
+
+Listagem de tarefas:
+```
+curl --request GET \
+  --url http://localhost:3333/tasks \
+```
+
+Update de tarefas:
+```
+curl --request POST \
+  --url http://localhost:3333/update \
+  --header 'Content-Type: application/json' \
+  --data '{
+"id": "6625164e883b52b24b34f069",
+"taskName": "teste update",
+"dueDate": "2024-04-25T01:47:38.950Z",
+"priority": "alta",
+"description": "não esquecer do remedio"
+}'
+```
+
+Apagar tarefa:
+```
+curl --request DELETE \
+  --url 'http://localhost:3333/task?id=6625164e883b52b24b34f069' \
+```
+
 
 
 ## 🛠️ Construído com
