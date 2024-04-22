@@ -185,13 +185,16 @@ export default function App(){
       const dueDateInput = document.getElementById('dueDate') as HTMLInputElement;
       const dueDate = dueDateInput ? moment(dueDateInput.value).format('YYYY-MM-DDTHH:mm:ss.SSSZ') : null;
       const priority = document.getElementById('priority') as HTMLSelectElement;
+      const description = document.getElementById('description') as HTMLSelectElement;
+
       
       
       const response = await api.post("/update",{
         id: id.value,
         taskName: nameTask.value,
         dueDate: dueDate,
-        priority: priority.value
+        priority: priority.value,
+        description: description.value
       })
 
       setTasks(allTasks => {
