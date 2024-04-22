@@ -15,7 +15,7 @@ class UpdateTaskService{
     async execute({id,taskName, dueDate, priority, description, status}: UpdateTaskProps){
         console.log(taskName)
 
-        if(!taskName || !dueDate || !priority || description){
+        if(!taskName || !dueDate || !priority || !description){
             throw new Error("Preencha todos os campos")
         }
         
