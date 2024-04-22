@@ -60,7 +60,7 @@ Verificar conexão com o banco via Prisma Studio
 npx prisma studio
 ```
 
-## Para obter dados do sistema
+## ⚙️ Para obter dados do sistema
 
 Cadastro de tarefas:
 ```
