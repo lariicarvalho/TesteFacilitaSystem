@@ -185,7 +185,7 @@ export default function App(){
       const dueDateInput = document.getElementById('dueDate') as HTMLInputElement;
       const dueDate = dueDateInput ? moment(dueDateInput.value).format('YYYY-MM-DDTHH:mm:ss.SSSZ') : null;
       const priority = document.getElementById('priority') as HTMLSelectElement;
-      const description = document.getElementById('description') as HTMLSelectElement;
+      const description = document.getElementById('description') as HTMLInputElement;
 
       
       
